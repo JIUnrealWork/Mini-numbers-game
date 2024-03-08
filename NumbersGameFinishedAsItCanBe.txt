@@ -1,0 +1,62 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+
+int main() {
+    // Write C++ code here
+    
+    srand(time(NULL));
+    
+    int correctGuess = rand() % 10; //
+    
+    
+    int guess;
+    
+    
+    int tries = 0;
+    int timesGuessed;
+    
+    std::cout << "Im thinking of a number between one and ten:";
+    
+    std::cin >> guess; // this is getting a number input and setting its value to guess.
+    
+    
+   while (guess != correctGuess && tries < 999)
+  {
+    
+    timesGuessed ++;
+    
+    if(guess < correctGuess)
+    {
+        
+        
+        
+        std::cout << "HINT: the number is higher\n"<< "How many times you guessed:" << timesGuessed << "\n";
+        
+    }
+    else if(guess > correctGuess)
+    {
+        std::cout << "HINT: the number is lower\n" << "How many times you guessed:" << timesGuessed << "\n";
+        
+    }
+    
+    
+    
+    std::cout << "wrong guess, try again: ";
+    
+    std::cin >> guess;
+    
+    
+    tries --;
+    
+
+    
+  }  
+    
+ // make a win condition here so that the player can actually guess and win.
+     if(guess == correctGuess)
+   {
+       std::cout << "you have guessed the number correctly\n ";
+   }
+
+    return 0;
+}
